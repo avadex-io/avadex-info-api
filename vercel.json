@@ -1,0 +1,61 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/api/tokens",
+      "destination": "/api/tokens"
+    },
+    {
+      "source": "/api/tvl",
+      "destination": "/api/tvl"
+    },
+    {
+      "source": "/api/tokens/:address",
+      "destination": "/api/tokens/tokens"
+    },
+    {
+      "source": "/api/pairs/:address",
+      "destination": "/api/pairs/pairs"
+    },
+    {
+      "source": "/api/transactions/",
+      "destination": "/api/transactions/index"
+    },
+    {
+      "source": "/api/transactions/:address",
+      "destination": "/api/transactions/transactions"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, HEAD, OPTIONS"
+        },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "Accept, Content-Type, Origin"
+        },
+        {
+          "key": "Access-Control-Max-Age",
+          "value": "86400"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=60, s-maxage=60"
+        },
+        {
+          "key": "Pragma",
+          "value": "no-cache"
+        }
+      ]
+    }
+  ]
+}
